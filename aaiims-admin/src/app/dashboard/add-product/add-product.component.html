@@ -1,0 +1,51 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h1>Add Product</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <form [formGroup]="addProductForm" (ngSubmit)="addProduct()" #f="ngForm">
+        <div class="form-group">
+          <label for="exampleInputEmail1">Product Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="productName"
+            aria-describedby="emailHelp"
+            placeholder="Enter product Name"
+            formControlName="productName"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Product Description</label>
+          <input
+            type="text"
+            class="form-control"
+            id="productDescription"
+            placeholder="Enter Description"
+            formControlName="productDescription"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Image Url</label>
+          <input
+            type="text"
+            class="form-control"
+            id="productImageUrl"
+            placeholder="Image Url"
+            formControlName="productImageUrl"
+            required
+          />
+        </div>
+
+        <button type="submit" class="btn btn-primary" [disabled]="!f.valid">
+          Save
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

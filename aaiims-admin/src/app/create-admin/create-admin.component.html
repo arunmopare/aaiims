@@ -1,0 +1,49 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h1>Create Admin</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <form [formGroup]="addUserForm" (ngSubmit)="addUser()" #f="ngForm">
+        <div class="form-group">
+          <label for="exampleInputEmail1">Admin Email</label>
+          <input
+            type="text"
+            class="form-control"
+            id="email"
+            aria-describedby="emailHelp"
+            placeholder="Enter Email"
+            formControlName="email"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Password</label>
+          <input
+            type="password"
+            class="form-control"
+            id="password"
+            placeholder="Enter Password"
+            formControlName="password"
+            required
+          />
+        </div>
+
+        <button type="submit" class="btn btn-primary" [disabled]="!f.valid">
+          Add Admin
+        </button>
+
+        <div style="height: 20px"></div>
+        <button
+          routerLink="/login-admin"
+          routerLinkActive="active"
+          class="btn btn-primary"
+        >
+          Go to Login
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

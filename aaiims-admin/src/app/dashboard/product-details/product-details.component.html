@@ -1,0 +1,111 @@
+<div class="continer">
+  <div class="row">
+    <div class="col-md-6 d-flex justify-content-center">
+      <qrcode
+        [qrdata]="paramProductId"
+        [width]="256"
+        [errorCorrectionLevel]="'M'"
+      ></qrcode>
+    </div>
+    <div class="col-md-6 d-flex justify-content-center">
+      <div class="row">
+        <img
+          height="250px"
+          width="250px"
+          [src]="ParamProductImageUrl"
+          alt="Cannot Load Product Image"
+          class="img-thumbnail"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container-fluid">
+  <!-- Content Row -->
+  <div class="row">
+    <!-- Total Buy Card  -->
+    <div class="col-xl-4 col-md-6 mb-4">
+      <div class="card border-left-primary shadow h-100 py-2">
+        <div class="card-body">
+          <div class="row no-gutters align-items-center">
+            <div class="col mr-2">
+              <div
+                class="text-xs font-weight-bold text-primary text-uppercase mb-1"
+              >
+                Total Reports
+              </div>
+              <div class="h5 mb-0 font-weight-bold text-gray-800">
+                {{ productReports.length }}
+              </div>
+            </div>
+            <div class="col-auto">
+              <i class="fa fa-check-square-o fa-2x text-gray-300"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+      <div class="card shadow mb-4">
+        <!-- Card Header - Dropdown -->
+        <div
+          class="card-header py-3 d-flex flex-row align-items-center justify-content-between"
+        >
+          <h6 class="m-0 font-weight-bold text-primary">
+            Product Reports for
+            {{ productName }}
+          </h6>
+          <div class=""></div>
+        </div>
+        <!-- Card Body -->
+        <div class="card-body">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Report Date</th>
+                <th scope="col">Product Report</th>
+                <th scope="col">Product Report By</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of productReports; index as i">
+                <th scope="row">{{ i + 1 }}</th>
+                <td>{{ item.date }}</td>
+                <td>{{ item.report }}</td>
+                <td>{{ item.maintenanceBy }}</td>
+
+                <!-- <td>
+                  <button
+                    class="btn btn-success"
+                    mat-raised-button
+                    (click)="navigate(item._id)"
+                  >
+                    VIEWS
+                  </button>
+                </td> -->
+                <td>
+                  <button
+                    class="btn btn-danger"
+                    mat-raised-button
+                    (click)="deleteProductReport(item._id)"
+                  >
+                    DELETE
+                  </button>
+                  <!-- <button
+                        class="btn btn-danger"
+                        (click)="rejectVendorRequest(item._id)"
+                      >
+                        Delete
+                      </button> -->
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

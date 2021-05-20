@@ -1,0 +1,8 @@
+Lets define our product
+
+productId
+ProductOwner
+productName
+productQuantity
+ProductDescription
+ProductImageUrl

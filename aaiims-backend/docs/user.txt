@@ -1,0 +1,14 @@
+user will be of mainly two types
+1 farmer 
+2 buyers
+
+
+schema
+userId
+userEmail
+userDetails
+    Name
+    Adderess
+    mobileNumber
+isDetailesFilled
+userType

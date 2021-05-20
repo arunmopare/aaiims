@@ -1,0 +1,10 @@
+ok so we want to build a portal for farmers
+first entity is farmers
+
+mainly he will be adding products to the portal
+and he will be getting paid after he sells the products
+we can also give rating to farmers
+farmers address will also be also useful
+we also have to show how much he has sell to someone(mostly userId will be used to match them with eachother)
+
+ok so should we start from scratch or continue the existing app;
